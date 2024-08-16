@@ -61,8 +61,24 @@ impl ParsedContentDisposition {
         self.params.get("name").cloned()
     }
     #[allow(dead_code)]
-    pub fn filename(&self) -> Option<String> {
+    pub fn filename_full(&self) -> Option<String> {
         self.params.get("filename").cloned()
+    }
+    #[allow(dead_code)]
+    pub fn filename(&self) -> Option<(String, Option<String>)> {
+        let clone = self.params.get("filename").cloned();
+        match clone {
+            Some(c) => {
+                let mut arr: Vec<&str> = c.split(".").collect();
+                let last = arr.pop();
+                let first = arr.join(".");
+                Some(match last {
+                    Some(l) => (first, Some(l.to_owned())),
+                    None => (first, None),
+                })
+            }
+            None => None,
+        }
     }
 }
 
@@ -283,6 +299,9 @@ mod tests {
         let dis = parse_content_disposition(" form-data; name=\"cover\"; filename=\"exif.jpg\"");
         assert_eq!(dis.disposition, DispositionType::FormData);
         assert_eq!(dis.name(), Some("cover".to_string()));
-        assert_eq!(dis.filename(), Some("exif.jpg".to_string()));
+        assert_eq!(dis.filename_full(), Some("exif.jpg".to_string()));
+        let f = dis.filename().unwrap();
+        assert_eq!(f.0, "exif".to_string());
+        assert_eq!(f.1, Some("jpg".to_string()));
     }
 }
