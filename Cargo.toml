@@ -1,0 +1,16 @@
+[package]
+name = "content_disposition"
+version = "0.1.0"
+edition = "2021"
+
+description = "Content-Disposition parser"
+homepage = "https://github.com/y0zong/content-disposition/blob/master/README.md"
+repository = "https://github.com/y0zong/content-disposition"
+keywords = ["parser", "content", "disposition", "mime", "http", "http2"]
+categories = ["http", "http2", "parsing"]
+exclude = [".gitattributes", ".gitignore", ".github/**", "examples/**"]
+readme = "README.md"
+license = "MIT OR BSD-0-Clause"
+
+[dependencies]
+charset = "0.1.5"
