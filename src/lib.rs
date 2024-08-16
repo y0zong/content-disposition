@@ -57,11 +57,11 @@ pub struct ParsedContentDisposition {
 
 impl ParsedContentDisposition {
     #[allow(dead_code)]
-    fn name(&self) -> Option<String> {
+    pub fn name(&self) -> Option<String> {
         self.params.get("name").cloned()
     }
     #[allow(dead_code)]
-    fn filename(&self) -> Option<String> {
+    pub fn filename(&self) -> Option<String> {
         self.params.get("filename").cloned()
     }
 }

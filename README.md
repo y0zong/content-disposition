@@ -2,7 +2,7 @@
 [![Crate](https://img.shields.io/crates/v/content_disposition.svg)](https://crates.io/crates/content_disposition)
 
 ## Documentation
-See the rustdoc at [docs.rs](https://docs.rs/mailparse/).
+See the rustdoc at [docs.rs](https://docs.rs/content_disposition/).
 
 ## API
 The primary entry point for this library is the following function:
