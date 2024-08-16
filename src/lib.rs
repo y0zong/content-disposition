@@ -44,7 +44,7 @@ fn parse_disposition_type(disposition: &str) -> DispositionType {
 /// A struct to hold a more structured representation of the Content-Disposition header.
 /// This is provided mostly as a convenience since this metadata is usually
 /// needed to interpret the message body properly.
-#[derive(Debug, Default)]
+#[derive(Debug, Clone, Default)]
 pub struct ParsedContentDisposition {
     /// The disposition type of the Content-Disposition header. If this
     /// is an extension type, the string will be lowercased.
