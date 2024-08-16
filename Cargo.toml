@@ -10,7 +10,7 @@ keywords = ["parser", "content", "disposition", "mime", "http", "http2"]
 categories = ["http", "http2", "parsing"]
 exclude = [".gitattributes", ".gitignore", ".github/**", "examples/**"]
 readme = "README.md"
-license = "MIT OR BSD-0-Clause"
+license = "MIT OR 0BSD"
 
 [dependencies]
 charset = "0.1.5"
