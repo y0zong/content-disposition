@@ -25,6 +25,7 @@ pub enum DispositionType {
     Extension(String),
 }
 
+#[allow(clippy::derivable_impls)]
 impl Default for DispositionType {
     fn default() -> Self {
         DispositionType::Inline

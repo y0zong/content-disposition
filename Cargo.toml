@@ -15,3 +15,7 @@ license = "MIT OR 0BSD"
 
 [dependencies]
 charset = "0.1.5"
+
+[lints.clippy]
+all = { level = "warn", priority = -1 }
+uninlined_format_args = "allow"
